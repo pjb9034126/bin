@@ -1,0 +1,21 @@
+<%= form_with(model: content, local: true) do |form| %>
+  
+
+  <div class="field">
+    <%= form.hidden_field :newspaper_id, value: @newspaper.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :articletext %>
+    <%= form.text_area :articletext %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

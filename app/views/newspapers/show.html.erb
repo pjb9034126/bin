@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>신문사명:</strong>
+  <%= @newspaper.name %>
+</p>
+
+<p>
+  <strong>제목:</strong>
+  <%= @newspaper.article %>
+</p>
+
+<p>
+  <strong>기자:</strong>
+  <%= @newspaper.reporter %>
+</p>
+<h4>
+	댓글 <%= @contents.size %> 개
+</h4>
+<ul>
+	<% @contents.each do |content| %>
+      <li><%= content.comment %></li>
+    <% end %>
+</ul>
+
+<%= render 'contents/form', content: @comment %>
+<%= link_to 'Edit', edit_newspaper_path(@newspaper) %> |
+<%= link_to 'Back', newspapers_path %> |
+<%= link_to '댓글확인', contents_path %>

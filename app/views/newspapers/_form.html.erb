@@ -1,0 +1,32 @@
+<%= form_with(model: newspaper, local: true) do |form| %>
+  <% if newspaper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(newspaper.errors.count, "error") %> prohibited this newspaper from being saved:</h2>
+
+      <ul>
+      <% newspaper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :신문사명 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :기사 %>
+    <%= form.text_field :article %>
+  </div>
+
+  <div class="field">
+    <%= form.label :기자 %>
+    <%= form.text_field :reporter %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
